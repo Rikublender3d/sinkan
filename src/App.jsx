@@ -2,13 +2,52 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import { SiX, SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
-import { ClipboardCopy } from 'lucide-react';
-
+import Hamburger from 'hamburger-react'
+import { useState } from 'react';
 function App() {
+  const [isOpen, setOpen] = useState(false);
   return (
     <div className="relative">
+      <div className='fixed w-[50%] top-0 z-20 md:hidden'>
+       <Hamburger toggled={isOpen} toggle={setOpen} />
+            {isOpen ? (
+        <div>
+          <div className='w-[100%] h-full'>
+            <ul className='text-center w-full bg-white opacity-80 px-3'>
+              <li className='p-3 border-b-2 border-black border-dotted'>
+              <Link
+                  to="/"
+                >
+                  Home
+                </Link>
+                </li>
+              <li className='p-3 border-b-2 border-black border-dotted'>
+                <a href="#about"
+                >
+                About
+                </a>
+                </li>
+              <li className='p-3 border-b-2 border-black border-dotted '>
+                <Link
+                  to="/#schedule"
+                >
+                Schedule
+                </Link>
+                </li>
+              <li className='p-3 '>
+                <Link
+                  to="/#access"
+                >
+                参加申込はこちら
+                </Link>
+                </li>
+            </ul>
+          </div>
+        </div>
+      ) : undefined}
+      </div>
         {/* ヘッダーセクション */}
-        <header className="py-6">
+        <header className="py-6 hidden md:block">
           <nav className="container mx-auto px-4">
             <div className="flex items-center justify-between">
               <Link

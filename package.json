@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Rikublender3d/sinkan.git",
+  "homepage": "http://beyond2020nextproject-sinkan.jp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -85,7 +85,8 @@ function App() {
                     </div>
                 </div>
           <div className="container mx-auto text-center">
-            <p>&copy; 2023 Beyond2020NextProject. All rights reserved.</p>
+            <p>&copy; 2025
+               Beyond2020NextProject. All rights reserved.</p>
           </div>
         </footer>
       </div>

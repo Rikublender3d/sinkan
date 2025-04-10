@@ -1,68 +1,125 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.righteous-regular {
+  font-family: "Righteous", sans-serif;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+}
+.area {
+  background: linear-gradient(to left, #9b9b9b, #e7e8ff);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Circles container */
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Common styles for circles */
+.circle {
+  position: absolute;
+  display: block;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -150px;
+  animation: animate 25s linear infinite;
+  border-radius: 50%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Circle sizes and positions */
+.circle1 {
+  width: 80px;
+  height: 80px;
+  left: 25%;
+  animation-delay: 0s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.circle2 {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circle3 {
+  width: 20px;
+  height: 20px;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.circle4 {
+  width: 60px;
+  height: 60px;
+  left: 40%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circle5 {
+  width: 20px;
+  height: 20px;
+  left: 65%;
+  animation-delay: 0s;
+}
+
+.circle6 {
+  width: 110px;
+  height: 110px;
+  left: 75%;
+  animation-delay: 3s;
+}
+
+.circle7 {
+  width: 150px;
+  height: 150px;
+  left: 35%;
+  animation-delay: 7s;
+}
+
+.circle8 {
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circle9 {
+  width: 15px;
+  height: 15px;
+  left: 20%;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circle10 {
+  width: 150px;
+  height: 150px;
+  left: 85%;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+/* Animation */
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
   }
 }
+

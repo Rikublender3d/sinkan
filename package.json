@@ -16,9 +16,12 @@
     "aos": "^2.3.4",
     "hamburger-react": "^2.5.2",
     "lucide-react": "^0.487.0",
+    "microcms-js-sdk": "^3.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.5.0"
+    "react-paginate": "^8.3.0",
+    "react-router-dom": "^7.5.0",
+    "react-simple-icons": "^1.0.0-beta.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

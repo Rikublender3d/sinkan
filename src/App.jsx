@@ -1,19 +1,32 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
+import Blogs from './pages/Blogs';
+import BlogPostPage from './pages/page';
 import { SiX, SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
-import Hamburger from 'hamburger-react'
+import Member from './pages/member';
 import { useState } from 'react';
 function App() {
   const [isOpen, setOpen] = useState(false);
+  const handlemenuToggle = () => {
+    setOpen(!isOpen);
+  };
   return (
     <div className="relative">
-      <div className='fixed w-[50%] top-0 z-20 md:hidden'>
-       <Hamburger toggled={isOpen} toggle={setOpen} />
+     <button onClick={handlemenuToggle} type="button" className="z-40 space-y-2 fixed top-5 right-5 md:hidden">
+            <div className={isOpen ? 'w-8 h-0.5 bg-gray-600 translate-y-2.5 rotate-45 transition duration-500 ease-in-out' : 
+              'w-8 h-0.5 bg-gray-600 transition duration-500 ease-in-out'} />
+            <div className={isOpen ? 'opacity-0 transition duration-500 ease-in-out' : 'w-8 h-0.5 bg-gray-600 transition duration-500 ease-in-out'} />
+            <div className={isOpen ? 'w-8 h-0.5 bg-gray-600 -rotate-45 transition duration-500 ease-in-out' : 'w-8 h-0.5 bg-gray-600 transition duration-500 ease-in-out'} />
+          </button>
             {isOpen ? (
-        <div>
-          <div className='w-[100%] h-full'>
-            <ul className='text-center w-full bg-white opacity-80 px-3'>
+       <nav
+       className={
+          isOpen
+           ? 'z-30 text-left fixed bg-slate-50 right-0 top-0 w-8/12 h-screen flex flex-col justify-start pt-8 px-3 ease-linear duration-500'
+           : 'z-30 fixed right-[-100%] ease-linear duration-500'
+       }>
+                   <ul className='text-center w-full h-full '>
               <li className='p-3 border-b-2 border-black border-dotted'>
               <Link
                   to="/"
@@ -21,31 +34,23 @@ function App() {
                   Home
                 </Link>
                 </li>
-              <li className='p-3 border-b-2 border-black border-dotted'>
-                <a href="#about"
-                >
-                About
-                </a>
-                </li>
-              <li className='p-3 border-b-2 border-black border-dotted '>
+              <li className='p-3'>
                 <Link
-                  to="/#schedule"
+                  to="/blogs"
                 >
-                Schedule
+                News
                 </Link>
                 </li>
-              <li className='p-3 '>
+              <li className='p-3'>
                 <Link
-                  to="/#access"
+                  to="/member"
                 >
-                参加申込はこちら
+                  Member
                 </Link>
                 </li>
             </ul>
-          </div>
-        </div>
+            </nav>
       ) : undefined}
-      </div>
         {/* ヘッダーセクション */}
         <header className="py-6 hidden md:block">
           <nav className="container mx-auto px-4">
@@ -63,17 +68,17 @@ function App() {
                 >
                   Home
                 </Link>
-                <a href='#about' className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white">
-                  AboutUs
-                </a>
-                <a href='#skills' className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white">
-                  Schedule
-                </a>
                 <Link
-                  to="#"
+                  to="/blogs"
                   className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white"
                 >
-                  参加申込はこちら
+                  News
+                </Link>
+                <Link
+                  to="/member"
+                  className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white"
+                >
+                  Member
                 </Link>
               </div>
             </div>
@@ -81,6 +86,9 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogPostPage/>} />
+          <Route path="/member" element={<Member />} />
         </Routes>
         <footer className="bg-gray-800 text-white py-4">
            {/* シェアボタン */}

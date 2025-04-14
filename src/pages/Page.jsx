@@ -40,7 +40,8 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className='w-[90%] mx-auto'>
+    <div className="break-all container md:mx-auto p-4 mt-20 mb-4 md:my-4 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-gray-500 mb-4">投稿日: {new Date(post.publishedAt).toLocaleDateString()} カテゴリー:{post.category.name}</p>
       <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: post.body }}></div>
@@ -63,6 +64,7 @@ export default function BlogPostPage() {
               <SiFacebook className="h-5 w-5" />
             </button>
             </div>
+    </div>
     </div>
   );
 }

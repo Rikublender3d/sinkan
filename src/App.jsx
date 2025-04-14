@@ -34,7 +34,7 @@ function App() {
                   Home
                 </Link>
                 </li>
-              <li className='p-3'>
+              <li className='p-3 border-b-2 border-black border-dotted'>
                 <Link
                   to="/blogs"
                 >

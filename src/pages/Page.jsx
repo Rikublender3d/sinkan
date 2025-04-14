@@ -36,7 +36,7 @@ export default function BlogPostPage() {
 
 
   if (!post) {
-    return <p>投稿が見つかりません。</p>;
+    return <p></p>;
   }
 
   return (

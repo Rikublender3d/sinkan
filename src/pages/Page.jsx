@@ -18,7 +18,6 @@ export default function BlogPostPage() {
   const shareURL = new URL(
     window.location.origin + window.location.pathname
   ).toString();
-  console.log(shareURL);
   const { id } = useParams(); // URLの動的パラメータからIDを取得
   const [post, setPost] = useState(null);
 
@@ -48,10 +47,13 @@ export default function BlogPostPage() {
       <div>
         <hr/>
         <h2 className="text-lg mt-8 mb-4">共有する</h2>
-      <a href="http://www.facebook.com/share.php?u={URL}" rel="nofollow noopener" target="_blank"
-       className="group inline-flex h-10 w-10 mr-[10px] items-center justify-center rounded-lg border border-slate-800 bg-black text-slate-400 transition-all duration-300  hover:text-white">
-       <SiX className="h-5 w-5" />
-     </a>
+     <button onClick={() =>
+      window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent('')}&url=${encodeURIComponent(shareURL)}`,
+        '_blank'
+      )} className="group inline-flex h-10 w-10 mr-[10px] items-center justify-center rounded-lg border border-slate-800 bg-black text-slate-400 transition-all duration-300  hover:text-white">
+        <SiX className="h-5 w-5" />
+      </button>
      <button
               onClick={() =>
                 window.open(

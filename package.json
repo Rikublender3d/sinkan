@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "http://beyond2020nextproject-sinkan.jp",
   "scripts": {
+    "postbuild": "copy dist\\index.html dist\\404.html",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

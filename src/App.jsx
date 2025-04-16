@@ -13,7 +13,7 @@ function App() {
   };
   return (
     <div className="relative">
-     <button onClick={handlemenuToggle} type="button" className="z-40 space-y-2 fixed top-5 right-5 md:hidden">
+     <button onClick={handlemenuToggle} type="button" aria-label="メニューボタン" className="z-40 space-y-2 fixed top-5 right-5 md:hidden">
             <div className={isOpen ? 'w-8 h-0.5 bg-gray-600 translate-y-2.5 rotate-45 transition duration-500 ease-in-out' : 
               'w-8 h-0.5 bg-gray-600 transition duration-500 ease-in-out'} />
             <div className={isOpen ? 'opacity-0 transition duration-500 ease-in-out' : 'w-8 h-0.5 bg-gray-600 transition duration-500 ease-in-out'} />
@@ -64,19 +64,19 @@ function App() {
               <div className="space-x-8">
                 <Link
                   to="/"
-                  className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
                 >
                   Home
                 </Link>
                 <Link
                   to="/blogs"
-                  className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
                 >
                   News
                 </Link>
                 <Link
                   to="/member"
-                  className="text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-white"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
                 >
                   Member
                 </Link>

@@ -6,7 +6,7 @@ export default function Blogs() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page state
   const postsPerPage = 9; // Number of posts per page
-
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -29,6 +29,12 @@ export default function Blogs() {
   const handleNextPage = () => setCurrentPage((prev) => prev + 1);
   const handlePreviousPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 
+  const categoryColor = {
+    "イベント": "text-red-500",
+    "ワークショップ": "text-purple-500",
+    "お知らせ": "text-green-500",
+    "活動報告": "text-blue-500",
+};
   return (
     <div>
       <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
@@ -45,7 +51,7 @@ export default function Blogs() {
             >
               <div className="order-1 sm:ml-6 xl:ml-0">
                 <h3 className="mb-1 text-slate-900 font-semibold">
-                  <span className="mb-1 block text-sm leading-6 text-indigo-500">
+                  <span className={`mb-1 block text-sm leading-6 text-indigo-500 ${categoryColor[post.category.name] || 'text-gray-500'}`}>
                     {post.category.name}
                   </span>
                   {post.title}

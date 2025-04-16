@@ -30,6 +30,12 @@ export default function Home() {
         }
         fetchData();
     }, []);
+    const categoryColor = {
+        "イベント": "text-red-500",
+        "ワークショップ": "text-purple-500",
+        "お知らせ": "text-green-500",
+        "活動報告": "text-blue-500",
+    };
     return (
         <div className="relative">
             <div className="area w-auto h-screen absolute bg-gradient-to-l from-[#8f94fb] to-[#4e54c8] -z-10">
@@ -64,8 +70,7 @@ export default function Home() {
                                 <div class="grow p-4 ms-32 sm:ms-48">
                                     <div class="min-h-24 flex flex-col justify-center">
                                         <h3 class="font-semibold text-sm text-gray-800">
-                                            <span class="block text-left  mb-1 text-sm leading-6 text-indigo-500">
-                                                {post.category.name}
+                                        <span className={`block text-left mb-1 text-sm leading-6 ${categoryColor[post.category.name] || "text-indigo-500"}`}>                                                {post.category.name}
                                             </span>
                                             <span class="block text-left text-gray-900 font-semibold text-lg">
                                                 {post.title}

@@ -6,6 +6,10 @@ import BlogPostPage from './pages/page';
 import { SiX, SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import Member from './pages/member';
 import { useState } from 'react';
+import Project from './pages/Project';
+import ScrollToTop from './component/ScrollToTop';
+import About from './pages/About';
+import OBOG from './pages/obog';
 function App() {
   const [isOpen, setOpen] = useState(false);
   const handlemenuToggle = () => {
@@ -80,15 +84,37 @@ function App() {
                 >
                   Member
                 </Link>
+                <Link
+                  to="/about"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
+                >
+                  About us
+                </Link>
+                <Link
+                  to="/project"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
+                >
+                  Project
+                </Link>
+                <Link
+                  to="/obog"
+                  className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
+                >
+                  OBOG
+                </Link>
               </div>
             </div>
           </nav>
         </header>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogPostPage/>} />
           <Route path="/member" element={<Member />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/obog" element={<OBOG />} />
         </Routes>
         <footer className="bg-gray-800 text-white py-4">
            {/* シェアボタン */}

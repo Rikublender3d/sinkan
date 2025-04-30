@@ -102,13 +102,6 @@ export default function Home() {
                         </Link>
                     </div>
                 </div>
-                <h2 className="p-3 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-10" id="shedule">
-                    Schedule
-                </h2>
-                <div>
-                    新入生歓迎会の開催を予定しています。<br></br>
-                    画像埋め込み
-                </div>
             </div>
         </div>
     )

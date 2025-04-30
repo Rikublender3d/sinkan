@@ -1,8 +1,9 @@
 import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link} from "react-router-dom";
 import Home from "./pages/Home";
 import Blogs from './pages/Blogs';
 import BlogPostPage from './pages/page';
+import Login from './pages/login';
 import { SiX, SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import Member from './pages/member';
 import { useState } from 'react';
@@ -10,6 +11,7 @@ import Project from './pages/Project';
 import ScrollToTop from './component/ScrollToTop';
 import About from './pages/About';
 import OBOG from './pages/obog';
+ import PrivateRoute from "./component/PrivateRoute";
 function App() {
   const [isOpen, setOpen] = useState(false);
   const handlemenuToggle = () => {
@@ -97,7 +99,7 @@ function App() {
                   Project
                 </Link>
                 <Link
-                  to="/obog"
+                  to="/login"
                   className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
                 >
                   OBOG
@@ -114,7 +116,15 @@ function App() {
           <Route path="/member" element={<Member />} />
           <Route path="/project" element={<Project />} />
           <Route path="/about" element={<About />} />
-          <Route path="/obog" element={<OBOG />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+          path="/obog"
+          element={
+            <PrivateRoute>
+              <OBOG />
+            </PrivateRoute>
+          }
+        />
         </Routes>
         <footer className="bg-gray-800 text-white py-4">
            {/* シェアボタン */}

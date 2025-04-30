@@ -5,10 +5,10 @@ import Profile4 from '../assets/member/profile4.png';
 import Profile5 from '../assets/member/profile5.jpg';
 import Profile6 from '../assets/member/profile6.jpg';
 import Profile7 from '../assets/member/profile7.jpg';
-import Profile8 from '../assets/member/profile8.jpg'
+import Profile8 from '../assets/member/profile8.jpg';
+import Profile9 from '../assets/member/profile9.jpg';
 import { SiFacebook, SiInstagram,SiX} from '@icons-pack/react-simple-icons';
 import { FaExternalLinkAlt } from "react-icons/fa";
-
 export default function Member() {
 
   return (
@@ -58,15 +58,17 @@ export default function Member() {
             school:"早稲田大学創造理工学部経営システム工学科3年"
           },
           {
-            name: "総務3",
+            name: "新見蓮",
             role: "総務",
-            introduction: "サンプルサンプルサンプル",
-            image: "https://placehold.jp/300x300.png",
+            introduction: "フォトグラファー/PRプランナー。教育系インパクトスタートアップの執行役員/事業責任者として、機会格差や情報格差の解消に取り組んでいる。大学ではコミュニケーションを専門に、世界各地を巡りながら、言語・コンテクスト・広告表現の関係を研究中。誰もが関わる一方で、難度が高いと言われる「教育」の領域に、インパクトスタートアップとして挑み、現場から未来のスタンダードをつくろうとしている。",
+            image: Profile9,
+            site:"https://my.prairie.cards/u/ren2130",
+            school:"早稲田大学社会科学部"
           },
           {
             name: "天野　実来",
             role: "広報",
-            introduction: "2024年度からBeyond 2020 NEXT PROJECTに所属。N高等学校在籍時に培ったプログラミングや3DCGスキルを活かし、WebサイトやWebアプリケーションの制作等を個人で手がけながら法人化を目指している。また、高校時代にXRを活用した教育事例に強い関心を持ち、その経験を通じて教育格差のない社会を実現するための活動に注力している。",
+            introduction: "N高等学校在籍時に培ったプログラミングスキルを活かし、WebサイトやWebアプリケーションの制作等を個人で手がけながら法人化を目指している。\nまた、高校時代にXRを活用した教育事例に強い関心を持ち、教育格差のない社会を実現するための活動に注力している。\n今年の春より株式会社GMO NIKKOでエンジニアのインターン活動を行っている。",
             image: Profile5,
             facebook:"https://www.facebook.com/profile.php?id=100078989904621",
             site:"https://rikublender3d.github.io/portfolio/",
@@ -90,7 +92,6 @@ export default function Member() {
             facebook:"https://www.facebook.com/share/162Yhp1WNn/?mibextid=wwXIfr",
             school:"同志社大学社会学部"
           },
-
         ].map((profile) => (
           <div class="flex flex-col bg-white shadow-lg rounded-lg my-6">
             <div class="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
@@ -108,7 +109,7 @@ export default function Member() {
                 <p class="text-sm font-semibold text-slate-500 uppercase whitespace-pre-wrap">
                   {profile.school}
                 </p>
-                <p class="text-base text-slate-600 mt-2 font-light">
+                <p class="text-base text-slate-600 mt-2 font-light whitespace-pre-wrap">
                   {profile.introduction}
                 </p>
               </div>

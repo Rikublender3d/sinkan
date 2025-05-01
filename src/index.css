@@ -13,6 +13,42 @@
   position: absolute;
   z-index: -1;
 }
+.slideimg {
+  position: absolute;
+  inset: 0;/*親要素内にフルサイズで配置*/
+  opacity: 0;
+  animation: slideAnime 24s infinite ;
+  z-index: 10;
+  width:100%;
+  height:100%;
+}
+
+@keyframes slideAnime {
+  0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	80%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+    z-index: 0;
+	}
+}
+.slideimg:nth-of-type(1){
+  animation-delay: 0s;
+}
+
+.slideimg:nth-of-type(2) {
+  animation-delay: 8s;
+}
+
+.slideimg:nth-of-type(3) {
+  animation-delay: 16s;
+}
 
 /* Circles container */
 .circles {
@@ -22,93 +58,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-/* Common styles for circles */
-.circle {
-  position: absolute;
-  display: block;
-  list-style: none;
-  background: rgba(255, 255, 255, 0.2);
-  bottom: -150px;
-  animation: animate 25s linear infinite;
-  border-radius: 50%;
-}
-
-/* Circle sizes and positions */
-.circle1 {
-  width: 80px;
-  height: 80px;
-  left: 25%;
-  animation-delay: 0s;
-}
-
-.circle2 {
-  width: 20px;
-  height: 20px;
-  left: 10%;
-  animation-delay: 2s;
-  animation-duration: 12s;
-}
-
-.circle3 {
-  width: 20px;
-  height: 20px;
-  left: 70%;
-  animation-delay: 4s;
-}
-
-.circle4 {
-  width: 60px;
-  height: 60px;
-  left: 40%;
-  animation-delay: 0s;
-  animation-duration: 18s;
-}
-
-.circle5 {
-  width: 20px;
-  height: 20px;
-  left: 65%;
-  animation-delay: 0s;
-}
-
-.circle6 {
-  width: 110px;
-  height: 110px;
-  left: 75%;
-  animation-delay: 3s;
-}
-
-.circle7 {
-  width: 150px;
-  height: 150px;
-  left: 35%;
-  animation-delay: 7s;
-}
-
-.circle8 {
-  width: 25px;
-  height: 25px;
-  left: 50%;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.circle9 {
-  width: 15px;
-  height: 15px;
-  left: 20%;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.circle10 {
-  width: 150px;
-  height: 150px;
-  left: 85%;
-  animation-delay: 0s;
-  animation-duration: 11s;
 }
 
 /* Animation */

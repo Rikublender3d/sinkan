@@ -5,7 +5,7 @@ import Image from '../assets/profile.jpg';
 export default function Project() {
     return (
         <div className="relative text-center">
-            <h2 className="p-3 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-10" id="project">
+            <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-10" id="project">
                 Project
             </h2>
             <div className='max-w-6xl mx-auto'>

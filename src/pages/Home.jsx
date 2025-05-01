@@ -4,6 +4,10 @@ import Image from '../assets/profile.jpg';
 import { client } from '../lib/microcms';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Slideshow1 from '../assets/slideshow1.jpg'
+import Slideshow2 from '../assets/slideshow2.jpg'
+import Slideshow3 from '../assets/slideshow3.jpg'
+
 AOS.init();
 
 // Component to fetch and display blog posts
@@ -35,28 +39,19 @@ export default function Home() {
     };
     return (
         <div className="relative">
-            <div className="area w-auto h-screen absolute bg-gradient-to-l from-[#8f94fb] to-[#4e54c8] -z-10">
-                <ul className="circles relative w-auto h-full overflow-hidden">
-                    <li className="circle circle1"></li>
-                    <li className="circle circle2"></li>
-                    <li className="circle circle3"></li>
-                    <li className="circle circle4"></li>
-                    <li className="circle circle5"></li>
-                    <li className="circle circle6"></li>
-                    <li className="circle circle7"></li>
-                    <li className="circle circle8"></li>
-                    <li className="circle circle9"></li>
-                    <li className="circle circle10"></li>
-                </ul>
-            </div>
+            <div className="area w-auto h-screen absolute bg-gradient-to-l from-[#8f94fb] to-[#4e54c8] z-10">
+                <img src={Slideshow1} className='slideimg object-top object-cover w-full circles overflow-hidden'/>
+                <img src={Slideshow2} className='slideimg object-top object-cover w-full circles overflow-hidden'/>
+                <img src={Slideshow3} className='slideimg object-bottom object-cover w-full circles overflow-hidden'/>
+                </div>
             <div className=" text-center fade-in" data-aos="fade-up" data-aos-duration="1000">
                 <div className="h-screen w-auto flex justify-center items-center">
-                    <h2 className="righteous-regular p-3 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-6xl font-bold tracking-tight text-transparent">
+                    <h2 className="righteous-regular p-3 bg-gradient-to-r from-[#1C1E56] from-20% via-[#355070] via-30% to-[#FFF500] to-90% ... bg-clip-text text-6xl font-bold tracking-tight text-transparent">
                         Beyond 2020 NEXT PROJECT
                     </h2>
                 </div>
                 <div>
-                    <h2 className="p-3 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-6xl font-bold tracking-tight text-transparent">
+                    <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent">
                         News
                     </h2>
                     {posts.map((post) => (
@@ -86,19 +81,19 @@ export default function Home() {
                         </div>
                     </Link>
                 </div>
-                <h2 className="p-3 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-6xl font-bold tracking-tight text-transparent" id="about">
+                <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent" id="about">
                     AboutUs
                 </h2>
                 <h3 className='mt-2 text-base text-gray-600'>Beyond 2020 Next Projectとは</h3>
                 <div className="md:max-w-5xl mx-auto mt-10 md:flex items-center justify-between column-3" data-aos="fade-up" data-aos-duration="1000">
                     <img src={Image} alt="Profile" className="px-5 w-[90%] mx-auto rounded-full md:w-1/2 h-1/2" />
                     <div className="text-center md:w-1/2">
-                        <p className="px-5 mt-2 text-2xl text-gray-600">
+                        <p className="px-5 mt-2 text-xl font-medium text-gray-600">
                             Beyond 2020 NEXT PROJECTは、
                             "アントレプレナーシップを養成する"ことをMISSIONに掲げた、早稲田大学発の学生団体です。<br/>アントレプレナーシップとは、起業家精神と直訳されますが、当団体では起業のみならず、全人類が持ち合わせるべきゼロイチ力と捉えています。<br/>高校生から大学院生の幅広い世代で構成されるメンバーは、これまで存在しなかった新しい価値を生み出す過程を経験します。
                         </p>
                         <Link to ="/about">
-                        <button class="my-5 group relative h-12 overflow-hidden overflow-x-hidden rounded-md bg-neutral-950 px-8 py-2 text-neutral-50"><span class="relative z-10">詳しくはこちら</span><span class="absolute inset-0 overflow-hidden rounded-md"><span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-blue-500 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span></span></button>
+                        <button class="my-5 group relative h-12 overflow-hidden overflow-x-hidden rounded-md bg-neutral-950 px-8 py-2 text-neutral-50"><span class="relative z-10">詳しくはこちら</span><span class="absolute inset-0 overflow-hidden rounded-md"><span class="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-[#355070] transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span></span></button>
                         </Link>
                     </div>
                 </div>

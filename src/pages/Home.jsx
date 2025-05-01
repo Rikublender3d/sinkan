@@ -42,7 +42,7 @@ export default function Home() {
             <div className="area w-auto h-screen absolute bg-gradient-to-l from-[#8f94fb] to-[#4e54c8] z-10">
                 <img src={Slideshow1} className='slideimg object-top object-cover w-full circles overflow-hidden'/>
                 <img src={Slideshow2} className='slideimg object-top object-cover w-full circles overflow-hidden'/>
-                <img src={Slideshow3} className='slideimg object-bottom object-cover w-full circles overflow-hidden'/>
+                <img src={Slideshow3} className='slideimg object-center object-cover w-full circles overflow-hidden'/>
                 </div>
             <div className=" text-center fade-in" data-aos="fade-up" data-aos-duration="1000">
                 <div className="h-screen w-auto flex justify-center items-center">

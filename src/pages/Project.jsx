@@ -1,7 +1,7 @@
 import one from '../assets/one.jpg';
 import two from '../assets/two.jpg';
 import three from '../assets/three.jpg';
-import Image from '../assets/profile.jpg';
+import Four from '../assets/four.jpg';
 export default function Project() {
     return (
         <div className="relative text-center">
@@ -11,7 +11,7 @@ export default function Project() {
             <div className='max-w-6xl mx-auto'>
                 <div class="flex px-6 py-5 fade-up" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="lg:flex grid-cols-2 rounded overflow-hidden shadow-lg" >
-                        <img class="object-cover mx-auto lg:w-[50%]" src={one} alt="Sunset in the mountains" />
+                        <img class="object-cover mx-auto lg:w-[50%] aspect-video" src={one} alt="Sunset in the mountains" />
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">国連を支える世界こども未来会議                                </div>
                             <p class="text-gray-700 text-base">
@@ -22,7 +22,7 @@ export default function Project() {
                 </div>
                 <div class="flex px-6 py-5 fade-up" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="lg:flex  grid-cols-2 rounded overflow-hidden shadow-lg flex-row-reverse">
-                        <img class="object-cover mx-auto lg:w-[50%]" src={two} alt="Sunset in the mountains" />
+                        <img class="object-cover mx-auto lg:w-[50%] aspect-video" src={two} alt="Sunset in the mountains" />
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">アントレプレナーシップ教育                                </div>
                             <p class="text-gray-700 text-base">
@@ -33,7 +33,7 @@ export default function Project() {
                 </div>
                 <div class="flex py-5 px-6 fade-up" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="lg:flex grid-cols-2 rounded overflow-hidden shadow-lg">
-                        <img class="object-cover mx-auto lg:w-[50%]" src={three} alt="Sunset in the mountains" />
+                        <img class="object-cover mx-auto lg:w-[50%] aspect-video" src={three} alt="Sunset in the mountains" />
                         <div class="px-6  py-4">
                             <div class="font-bold text-xl mb-2">SDGs教育事業                                </div>
                             <p class="text-gray-700 text-base">
@@ -44,8 +44,8 @@ export default function Project() {
                 </div>
                 <div class="flex py-5 px-6 fade-up" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="lg:flex flex-row-reverse grid-cols-2 rounded overflow-hidden shadow-lg text-center">
-                        <img class="object-fill mx-auto" src={Image} alt="Sunset in the mountains" />
-                        <div class="px-6 py-4 lg:w-[50%]">
+                        <img class="object-fill mx-auto lg:w-[50%] aspect-video" src={Four} alt="Sunset in the mountains" />
+                        <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">学生発企画</div>
                             <p class="text-gray-700 text-base">
                                 私たちは、アントレプレナーシップの向上と縦横のネットワークの展開を狙いとし、各学生が自身で企画したイベントの開催を行なっております。イベントは早稲田大学やSHIBUYA QWS、TOKYO創業ステーションなどで開催しており、内容は各自の専門を活かしたアカデミックな領域からビジネスやアートに関する領域まで多岐に渡ります。

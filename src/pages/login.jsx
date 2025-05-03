@@ -58,7 +58,7 @@ function Login() {
   return (
     <div className="mx-auto flex flex-col items-center justify-center bg-gray-100">
                         <h2 className="mt-14 md:mt-0 p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627]  bg-clip-text text-6xl font-bold tracking-tight text-transparent" id="about">
-                    OBOG
+                    Beyond Alumni
                 </h2>
                 <p className="text-gray-400 text-md mb-4">
                     閲覧にはログインが必要です。

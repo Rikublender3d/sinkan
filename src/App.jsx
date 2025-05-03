@@ -110,7 +110,7 @@ function App() {
                 to="/login"
                 className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
               >
-                OBOG
+                for Alumni
               </Link>
             </div>
           </div>

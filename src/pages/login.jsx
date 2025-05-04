@@ -11,7 +11,7 @@ function Login() {
   // ハッシュ化された正しいデータ
   const validUsernameHash = CryptoJS.SHA256(import.meta.env.VITE_OBOG_WEBSITE_USER_KEY).toString();
   const validPasswordHash = CryptoJS.SHA256(import.meta.env.VITE_OBOG_WEBSITE_PASSWORD_KEY).toString();
-  const EXPIRATION_TIME = 5 * 60 * 1000; // 5分（ミリ秒）
+  const EXPIRATION_TIME = 30 * 60 * 1000; // 10分（ミリ秒）
 
   useEffect(() => {
     // ローカルストレージからデータを取得

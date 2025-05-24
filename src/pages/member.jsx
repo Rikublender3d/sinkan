@@ -10,10 +10,21 @@ import Profile9 from '../assets/member/profile9.jpg';
 import { SiFacebook, SiInstagram,SiX} from '@icons-pack/react-simple-icons';
 import { FaExternalLinkAlt } from "react-icons/fa";
 export default function Member() {
-
+  const Breadcrumb = () => {
+    return (
+      <nav className="flex items-center space-x-2 text-gray-500 text-sm my-4">
+        <a href="/" className="hover:text-gray-700">ホーム</a>
+        <span className="text-gray-400">/</span>
+        <a href="/#/member" className="hover:text-gray-700">幹事メンバー紹介</a>
+      </nav>
+    );
+  };
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4 mt-12">幹事メンバー紹介</h1>
+             <div className="w-[90%] mx-auto mt-12">
+        <Breadcrumb />
+      </div>
+      <h1 className="text-4xl font-bold mb-4 ">幹事メンバー紹介</h1>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto w-[90%] mx-auto">
         {[
           {

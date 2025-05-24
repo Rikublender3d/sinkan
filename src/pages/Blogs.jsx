@@ -6,7 +6,7 @@ export default function Blogs() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page state
   const postsPerPage = 9; // Number of posts per page
-  
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -34,10 +34,22 @@ export default function Blogs() {
     "ワークショップ": "text-purple-500",
     "お知らせ": "text-green-500",
     "活動報告": "text-blue-500",
-};
+  };
+  const Breadcrumb = () => {
+    return (
+      <nav className="flex items-center space-x-2 text-gray-500 text-sm my-4">
+        <a href="/" className="hover:text-gray-700">ホーム</a>
+        <span className="text-gray-400">/</span>
+        <a href="/blogs" className="hover:text-gray-700">ニュース</a>
+      </nav>
+    );
+  };
   return (
-    <div>
-      <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8 mt-12">
+    <div className="flex flex-col items-center justify-center bg-gray-50">
+             <div className="w-[90%] mx-auto mt-12">
+        <Breadcrumb />
+      </div>
+            <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8 ">
         {posts.map((post, index) => {
           const rowIndex = Math.floor(index / postsPerPage);
           const delay = rowIndex * 300;

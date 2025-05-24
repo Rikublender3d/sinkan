@@ -4,8 +4,20 @@ import { GrGrow } from "react-icons/gr";
 import { GiTeamIdea } from "react-icons/gi";
 import { MdCoPresent } from "react-icons/md";
 export default function About() {
+    const Breadcrumb = () => {
+        return (
+            <nav className="flex items-center space-x-2 text-gray-500 text-sm my-4">
+                <a href="/" className="hover:text-gray-700">ホーム</a>
+                <span className="text-gray-400">/</span>
+                <a href="/#/about" className="hover:text-gray-700">AboutUs</a>
+            </nav>
+        );
+    };
     return (
-        <div className="relative text-center">
+        <div className="flex flex-col items-center text-center relative justify-center ">
+            <div className="w-[90%] mx-auto mt-12">
+                <Breadcrumb />
+            </div>
             <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-10" id="about">
                 About
             </h2>
@@ -50,32 +62,32 @@ export default function About() {
             </div>
             <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-4xl font-bold tracking-tight text-transparent mt-10" id="mission">
                 具体的な取り組み</h2>
-                <div class="grid gap-14 md:grid-cols-3 md:gap-5 mx-5 mt-10">
-                    <div class="rounded-lg bg-white p-6 text-center shadow-xl">
-                        <div
-                            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-teal-400 shadow-lg shadow-teal-500/40">
-                                <GrGrow className='h-8 w-8'/>
-                        </div>
-                        <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2">アントレプレナーシップを育む</h1>
-                        <p class="px-4 text-gray-500">メンバーが創造的なアイデアを生み出し、挑戦する環境を提供します。ワークショップを通じて、ビジネスの基礎や問題解決能力を磨き、実践的なスキルを養うことができます。</p>
+            <div class="grid gap-14 md:grid-cols-3 md:gap-5 mx-5 mt-10">
+                <div class="rounded-lg bg-white p-6 text-center shadow-xl">
+                    <div
+                        class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-teal-400 shadow-lg shadow-teal-500/40">
+                        <GrGrow className='h-8 w-8' />
                     </div>
-                    <div data-aos-delay="150" class="rounded-xl bg-white p-6 text-center shadow-xl">
-                        <div
-                            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
-                                <GiTeamIdea className='h-8 w-8'/>
-                        </div>
-                        <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2 ">アントレプレナーシップを実践する</h1>
-                        <p class="px-4 text-gray-500">学生がアイデアを現実化し、ビジネスの成功に向けた実践的な経験を積めるようになります。</p>
-                    </div>
-                    <div data-aos-delay="300" class="rounded-xl bg-white p-6 text-center shadow-xl">
-                        <div
-                            class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-sky-500 shadow-sky-500/40">
-                                <MdCoPresent className='h-8 w-8'/>
-                        </div>
-                        <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2">アントレプレナーシップの普及に貢献する</h1>
-                        <p class="px-4 text-gray-500">成功事例を発信することで、より多くの学生がアントレプレナーシップに関心を持ち、挑戦できる環境を整えます。</p>
-                    </div>
+                    <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2">アントレプレナーシップを育む</h1>
+                    <p class="px-4 text-gray-500">メンバーが創造的なアイデアを生み出し、挑戦する環境を提供します。ワークショップを通じて、ビジネスの基礎や問題解決能力を磨き、実践的なスキルを養うことができます。</p>
                 </div>
+                <div data-aos-delay="150" class="rounded-xl bg-white p-6 text-center shadow-xl">
+                    <div
+                        class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
+                        <GiTeamIdea className='h-8 w-8' />
+                    </div>
+                    <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2 ">アントレプレナーシップを実践する</h1>
+                    <p class="px-4 text-gray-500">学生がアイデアを現実化し、ビジネスの成功に向けた実践的な経験を積めるようになります。</p>
+                </div>
+                <div data-aos-delay="300" class="rounded-xl bg-white p-6 text-center shadow-xl">
+                    <div
+                        class="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-sky-500 shadow-sky-500/40">
+                        <MdCoPresent className='h-8 w-8' />
+                    </div>
+                    <h1 class="text-darken mb-3 text-2xl font-medium lg:px-2">アントレプレナーシップの普及に貢献する</h1>
+                    <p class="px-4 text-gray-500">成功事例を発信することで、より多くの学生がアントレプレナーシップに関心を持ち、挑戦できる環境を整えます。</p>
+                </div>
+            </div>
             <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-5xl font-bold tracking-tight text-transparent mt-10">
                 ご挨拶</h2>
             <div className="py-10 md:max-w-5xl mx-auto mt-10 md:flex items-center justify-between" data-aos="fade-up" data-aos-duration="1000">

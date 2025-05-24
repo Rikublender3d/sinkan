@@ -26,42 +26,42 @@ function App() {
         <div className={isOpen ? 'w-8 h-0.5 bg-gray-400 -rotate-45 transition duration-500 ease-in-out' : 'w-8 h-0.5 bg-gray-400 transition duration-500 ease-in-out'} />
       </button>
       {isOpen ? (
-  <nav
-    className="z-30 fixed bg-white right-0 top-0 w-8/12 h-screen flex flex-col justify-between pt-8 ease-linear duration-500"
-    style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}
-  >
-    <ul className="flex flex-col items-center w-full text-gray-900">
-      <li className="mt-8 p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-        <Link to="/blogs">News</Link>
-      </li>
-      <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-        <Link to="/about">AboutUs</Link>
-      </li>
-      <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-        <Link to="/project">Project</Link>
-      </li>
-      <li className="p-3 w-full text-center text-lg font-semibold hover:text-[#355070] hover:bg-gray-100 transition-colors">
-        <Link to="/member">Member</Link>
-      </li>
-    </ul>
-    {/* OB/OGとSNSセクション */}
-    <div className="w-full flex flex-col items-center pb-6">
-      <ul className="w-full">
-        <li className="p-3 w-full text-center text-base font-medium border-t border-gray-200">
-          <Link to="/obog" className="text-gray-600 hover:text-cyan-500 transition-colors">
-            Alumniの方はこちらから
-          </Link>
-        </li>
-      </ul>
-      <div className="mt-4 text-sm text-gray-400">
-        <span>Follow us on Social Media!</span>
-      </div>
-    </div>
-  </nav>
-) : null}
+        <nav
+          className="z-30 fixed bg-white right-0 top-0 w-8/12 h-screen flex flex-col justify-between pt-8 ease-linear duration-500"
+          style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}
+        >
+          <ul className="flex flex-col items-center w-full text-gray-900">
+            <li className="mt-8 p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
+              <Link to="/blogs">News</Link>
+            </li>
+            <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
+              <Link to="/about">AboutUs</Link>
+            </li>
+            <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
+              <Link to="/project">Project</Link>
+            </li>
+            <li className="p-3 w-full text-center text-lg font-semibold hover:text-[#355070] hover:bg-gray-100 transition-colors">
+              <Link to="/member">Member</Link>
+            </li>
+          </ul>
+          {/* OB/OGとSNSセクション */}
+          <div className="w-full flex flex-col items-center pb-6">
+            <ul className="w-full">
+              <li className="p-3 w-full text-center text-base font-medium border-t border-gray-200">
+                <Link to="/obog" className="text-gray-600 hover:text-cyan-500 transition-colors">
+                  Alumniの方はこちらから
+                </Link>
+              </li>
+            </ul>
+            <div className="mt-4 text-sm text-gray-400">
+              <span>Follow us on Social Media!</span>
+            </div>
+          </div>
+        </nav>
+      ) : null}
 
 
 

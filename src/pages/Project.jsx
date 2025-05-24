@@ -3,9 +3,20 @@ import two from '../assets/two.jpg';
 import three from '../assets/three.jpg';
 import Four from '../assets/four.jpg';
 export default function Project() {
+  const Breadcrumb = () => {
     return (
-        <div className="relative text-center">
-            <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-10" id="project">
+      <nav className="flex items-center space-x-2 text-gray-500 text-sm my-4">
+        <a href="/" className="hover:text-gray-700">ホーム</a>
+        <span className="text-gray-400">/</span>
+        <a href="/#/project" className="hover:text-gray-700">プロジェクト</a>
+      </nav>
+    );
+  };
+    return (
+        <div className="flex flex-col text-center relative bg-gray-50">
+        <div className="w-[90%] mx-auto mt-12">
+   <Breadcrumb />
+ </div>            <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-4" id="project">
                 Project
             </h2>
             <div className='max-w-6xl mx-auto'>

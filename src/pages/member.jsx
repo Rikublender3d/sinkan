@@ -13,7 +13,7 @@ export default function Member() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4 mt-10">幹事メンバー紹介</h1>
+      <h1 className="text-4xl font-bold mb-4 mt-12">幹事メンバー紹介</h1>
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto w-[90%] mx-auto">
         {[
           {

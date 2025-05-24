@@ -1,4 +1,3 @@
-import Chart from 'react-apexcharts';
 import Proflie from '../assets/member/profile1.jpg';
 import Card1 from '../assets/aboutus/card1.png';
 import { GrGrow } from "react-icons/gr";
@@ -13,9 +12,9 @@ export default function About() {
             <div className='max-w-6xl mx-auto'>
                 <div class="md:flex justify-center items-to gap-4" data-aos="fade-up" data-aos-duration="1000">
                     <img src={Card1} className='md:w-1/2 h-full aspect-square' />
-                    <div className='md:w-1/2 align-top mt-4'>
+                    <div className='md:w-1/2 align-top mt-4 '>
                         <p class="mt-2 text-lg text-gray-500 text-left px-3 pt-3">What we are</p>
-                        <h2 className='md:text-[33px] text-[28px] righteous-regular md:py-2 p-1'>Beyond 2020 NEXT PROJECTとは？</h2>
+                        <h2 className='md:text-[33px] text-[27px] righteous-regular md:py-2 p-1'>Beyond 2020 NEXT PROJECTとは？</h2>
                         <p className='text-left text-xl block px-4 pb-5'>「Beyond2020NextProject」は、アントレプレナーシップ教育を通じて、次世代のリーダーを育成することを目的としたプロジェクトです。</p>
                         <div className='mt-12 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-2'>
                             <div className='align-bottom flip-up px-5 shadow-md rounded-md py-3 mx-4 md:mx-0 mb-5 md:mb-0' data-aos="flip-up" data-aos-duration="700" data-aos-delay="500">
@@ -79,7 +78,7 @@ export default function About() {
                 </div>
             <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-5xl font-bold tracking-tight text-transparent mt-10">
                 ご挨拶</h2>
-            <div className="md:max-w-5xl mx-auto mt-10 md:flex items-center justify-between" data-aos="fade-up" data-aos-duration="1000">
+            <div className="py-10 md:max-w-5xl mx-auto mt-10 md:flex items-center justify-between" data-aos="fade-up" data-aos-duration="1000">
                 <div className="rounded-md  overflow-hidden md:w-1/2 h-1/2 mx-5 object-cover">
                     <img src={Proflie}
                         alt="Profile" />

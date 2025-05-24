@@ -37,7 +37,7 @@ export default function Blogs() {
 };
   return (
     <div>
-      <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
+      <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8 mt-12">
         {posts.map((post, index) => {
           const rowIndex = Math.floor(index / postsPerPage);
           const delay = rowIndex * 300;
@@ -68,7 +68,7 @@ export default function Blogs() {
               <img
                 src={post.image.url}
                 alt={post.title}
-                className="aspect-[3/2] h-auto mb-6 object-cover shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full"
+                className="aspect-video h-auto mb-6 object-cover shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full"
                 width="1200px"
                 height="640px"
               />

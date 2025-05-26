@@ -12,6 +12,9 @@ import ScrollToTop from './component/ScrollToTop';
 import About from './pages/About';
 import OBOG from './pages/obog';
 import PrivateRoute from "./component/PrivateRoute";
+import Contact from './pages/contact';
+import { ChevronDownIcon } from 'lucide-react';
+import { Menu } from '@headlessui/react';
 function App() {
   const [isOpen, setOpen] = useState(false);
   const handlemenuToggle = () => {
@@ -35,21 +38,27 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-              <Link to="/blogs">News</Link>
+              <Link to="/blogs">お知らせ</Link>
             </li>
             <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
               <Link to="/about">AboutUs</Link>
             </li>
             <li className="p-3 w-full text-center text-lg font-semibold border-b border-gray-300 hover:text-[#355070] hover:bg-gray-100 transition-colors">
-              <Link to="/project">Project</Link>
+              <Link to="/project">活動内容</Link>
+            </li>
+            <li className="p-3 w-full text-center text-lg font-semibold hover:text-[#355070] border-b border-gray-300 hover:bg-gray-100 transition-colors">
+              <Link to="/member">運営メンバー紹介</Link>
             </li>
             <li className="p-3 w-full text-center text-lg font-semibold hover:text-[#355070] hover:bg-gray-100 transition-colors">
-              <Link to="/member">Member</Link>
+              <Link to="/contact">お問い合わせ</Link>
             </li>
           </ul>
           {/* OB/OGとSNSセクション */}
           <div className="w-full flex flex-col items-center pb-6">
             <ul className="w-full">
+              <li className="p-3 w-full text-center text-base font-medium border-b border-gray-200">
+
+              </li>
               <li className="p-3 w-full text-center text-base font-medium border-t border-gray-200">
                 <Link to="/obog" className="text-gray-600 hover:text-cyan-500 transition-colors">
                   Alumniの方はこちらから
@@ -62,60 +71,65 @@ function App() {
           </div>
         </nav>
       ) : null}
-
-
-
       {/* ヘッダーセクション */}
       <header className="py-6 hidden md:block">
-        <nav className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            <Link
-              to="/"
-              className="righteous-regular text-[#1c1e56] text-3xl font-bold "
-            >
-              Beyond2020NextProject
+      <nav className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="righteous-regular text-[#1c1e56] text-3xl font-bold">
+            Beyond2020NextProject
+          </Link>
+          <div className="space-x-8 flex items-center">
+            <Link to="/" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+              Home
             </Link>
-            <div className="space-x-8">
-              <Link
-                to="/"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                Home
-              </Link>
-              <Link
-                to="/blogs"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                News
-              </Link>
-              <Link
-                to="/member"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                Member
-              </Link>
-              <Link
-                to="/about"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                About us
-              </Link>
-              <Link
-                to="/project"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                Project
-              </Link>
-              <Link
-                to="/login"
-                className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60"
-              >
-                for Alumni
-              </Link>
-            </div>
+            <Link to="/blogs" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+              お知らせ
+            </Link>
+            <Menu as="div" className="relative">
+              {({ open }) => (
+                <>
+                  <Menu.Button className="text-sm font-medium text-[#3E5465] flex items-center transition duration-200 hover:opacity-60">
+                  私たちについて
+                    <ChevronDownIcon className={`w-5 h-5 ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+                  </Menu.Button>
+                  <Menu.Items className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-40 bg-white border rounded-lg shadow-lg">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          to="/about"
+                          className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
+                        >
+                          概要
+                        </Link>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <Link
+                          to="/project"
+                          className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
+                        >
+                          活動内容
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  </Menu.Items>
+                </>
+              )}
+            </Menu>
+            <Link to="/member" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+              運営メンバー紹介
+            </Link>
+            <Link to='/contact' className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+              お問い合わせ
+            </Link>
+            <Link to="/login" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+              for Alumni
+            </Link>
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -125,6 +139,7 @@ function App() {
         <Route path="/project" element={<Project />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/obog"
           element={

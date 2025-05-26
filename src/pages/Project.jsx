@@ -13,7 +13,7 @@ export default function Project() {
     );
   };
     return (
-        <div className="flex flex-col text-center relative bg-gray-50">
+        <div className="flex flex-col text-center relative">
         <div className="w-[90%] mx-auto mt-12">
    <Breadcrumb />
  </div>            <h2 className="inline-block p-3 bg-gradient-to-r from-[#F5A043] to-[#E45627] bg-clip-text text-6xl font-bold tracking-tight text-transparent mt-4" id="project">

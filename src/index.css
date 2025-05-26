@@ -23,16 +23,16 @@
 
 @keyframes slideAnime {
   0%{
-		opacity: 0;
+		opacity: 0.01;
 	}
 	20%{
 		opacity: 1;
 	}
 	80%{
-		opacity: 0;
+		opacity: 0.01;
 	}
 	100%{
-		opacity: 0;
+		opacity: 0.01;
     z-index: 0;
 	}
 }

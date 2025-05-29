@@ -58,11 +58,11 @@ export default function Home() {
                         <Link class="max-w-[900px] w-[90%] mx-auto my-3 block shadow-md rounded-lg hover:shadow-2xs focus:outline-hidden dark:border-neutral-700"
                             to={`/blogs/${post.id}`} key={post.id} data-aos="fade-in" data-aos-duration="1000">
                             <div class="relative flex items-center overflow-hidden">
-                                <img class="w-32 sm:w-48 h-full absolute inset-0 object-cover rounded-s-lg" src={post.image.url} alt={post.title} />
-                                <div class="grow p-4 ms-32 sm:ms-48">
+                                <img class="w-32 hidden sm:block sm:w-48 h-full aspect-video absolute inset-0 object-cover rounded-s-lg" src={post.image.url} alt={post.title} />
+                                <div class="grow p-4  sm:ms-48">
                                     <div class="min-h-24 flex flex-col justify-center">
                                         <h3 class="font-semibold text-sm text-gray-800">
-                                            <span className={`block text-left mb-1 text-sm leading-6 ${categoryColor[post.category.name] || "text-indigo-500"}`}>                                                {post.category.name}
+                                            <span className={`block text-left mb-1 text-sm leading-6 border-b sm:border-0 ${categoryColor[post.category.name] || "text-indigo-500"}`}>                                                {post.category.name}
                                             </span>
                                             <span class="block text-left text-gray-900 font-semibold text-lg">
                                                 {post.title}

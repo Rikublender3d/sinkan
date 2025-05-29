@@ -62,9 +62,8 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
       <div className="flex justify-center ">
-        <img src={Test} alt="ブログロゴ" className="object-contain" />
+        <img src={Test} alt="ブログロゴ" className="object-cover h-[150px] md:h-auto md:w-full mt-12 md:mt-0" />
       </div>
-
       <div className="w-[90%] mx-auto pb-8">
         <div className="container md:mx-auto p-8 mt-10 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
           {/* パンくずリスト */}

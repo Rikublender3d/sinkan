@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import { client } from "../lib/microcms";
 import { useEffect, useState } from "react";
 import { SiX, SiFacebook } from "@icons-pack/react-simple-icons";
-import  Test  from '../assets/header.png';
-const Breadcrumb = ({ category, title }) => {
+import Test from '../assets/header.png';
+const Breadcrumb = ({ title }) => {
   return (
     <nav className="flex items-center space-x-2 text-gray-500 text-sm my-4">
       <a href="/" className="hover:text-gray-700">ホーム</a>
       <span className="text-gray-400">/</span>
       <a href={`/blogs`} className="hover:text-gray-700">News</a>
       <span className="text-gray-400">/</span>
-      <span className="font-semibold text-gray-700">{title}</span>
+      <span className="font-semibold text-gray-700">  {title.length > 18 ? `${title.slice(0, 18)}...` : title}</span>
     </nav>
   );
 };
@@ -37,7 +37,7 @@ export default function BlogPostPage() {
     async function fetchData() {
       try {
         const data = await getBlogPost(id);
-        
+
         // aタグをボタンに変換
         const transformed = data.body.replace(
           /<a\s+href="([^"]+)".*?<\/a>/g,
@@ -64,12 +64,12 @@ export default function BlogPostPage() {
       <div className="flex justify-center ">
         <img src={Test} alt="ブログロゴ" className="object-cover h-[150px] md:h-auto md:w-full mt-12 md:mt-0" />
       </div>
-      <div className="w-[90%] mx-auto pb-8">
-        <div className="container md:mx-auto p-8 mt-10 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+      <div className="md:w-[90%]  mx-auto pb-8">
+        <div className="container md:mx-auto p-8 mt-10 bg-white md:rounded-lg md:shadow-md hover:shadow-lg transition-shadow">
           {/* パンくずリスト */}
           <Breadcrumb category={post.category.name} title={post.title} />
 
-          <h1 className="text-4xl font-semibold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2">
+          <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-6 border-b-2 border-gray-300 pb-2">
             {post.title}
           </h1>
           <p className="text-gray-600 mb-4">

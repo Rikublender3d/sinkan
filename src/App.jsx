@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Blogs from './pages/Blogs';
-import BlogPostPage from './pages/page';
+import BlogPostPage from './pages/Page';
 import Login from './pages/login';
 import { SiX, SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import Member from './pages/member';
@@ -73,63 +73,63 @@ function App() {
       ) : null}
       {/* ヘッダーセクション */}
       <header className="py-6 hidden md:block">
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="righteous-regular text-[#1c1e56] text-3xl font-bold">
-            Beyond2020NextProject
-          </Link>
-          <div className="space-x-8 flex items-center">
-            <Link to="/" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
-              Home
+        <nav className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="righteous-regular text-[#1c1e56] text-3xl font-bold">
+              Beyond2020NextProject
             </Link>
-            <Link to="/blogs" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
-              お知らせ
-            </Link>
-            <Menu as="div" className="relative">
-              {({ open }) => (
-                <>
-                  <Menu.Button className="text-sm font-medium text-[#3E5465] flex items-center transition duration-200 hover:opacity-60">
-                  私たちについて
-                    <ChevronDownIcon className={`w-5 h-5 ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
-                  </Menu.Button>
-                  <Menu.Items className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-40 bg-white border rounded-lg shadow-lg">
-                    <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          to="/about"
-                          className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
-                        >
-                          概要
-                        </Link>
-                      )}
-                    </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          to="/project"
-                          className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
-                        >
-                          活動内容
-                        </Link>
-                      )}
-                    </Menu.Item>
-                  </Menu.Items>
-                </>
-              )}
-            </Menu>
-            <Link to="/member" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
-              運営メンバー紹介
-            </Link>
-            <Link to='/contact' className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
-              お問い合わせ
-            </Link>
-            <Link to="/login" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
-              for Alumni
-            </Link>
+            <div className="space-x-8 flex items-center">
+              <Link to="/" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+                Home
+              </Link>
+              <Link to="/blogs" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+                お知らせ
+              </Link>
+              <Menu as="div" className="relative">
+                {({ open }) => (
+                  <>
+                    <Menu.Button className="text-sm font-medium text-[#3E5465] flex items-center transition duration-200 hover:opacity-60">
+                      私たちについて
+                      <ChevronDownIcon className={`w-5 h-5 ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+                    </Menu.Button>
+                    <Menu.Items className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-40 bg-white border rounded-lg shadow-lg">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/about"
+                            className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
+                          >
+                            概要
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/project"
+                            className={`block px-4 py-2 text-sm text-[#3E5465] ${active ? 'bg-gray-100' : ''}`}
+                          >
+                            活動内容
+                          </Link>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </>
+                )}
+              </Menu>
+              <Link to="/member" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+                運営メンバー紹介
+              </Link>
+              <Link to='/contact' className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+                お問い合わせ
+              </Link>
+              <Link to="/login" className="text-sm font-medium text-[#3E5465] transition duration-200 hover:opacity-60">
+                for Alumni
+              </Link>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -4,6 +4,7 @@ import Image from '../assets/main.png';
 import { client } from '../lib/microcms';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getCachedData, setCachedData } from '../lib/cache';
 import Slideshow1 from '../assets/slideshow1.jpg'
 import Slideshow2 from '../assets/slideshow2.jpg'
 import Slideshow3 from '../assets/slideshow3.jpg'
@@ -16,14 +17,23 @@ export default function Home() {
     useEffect(() => {
         async function fetchData() {
             try {
+                // キャッシュをチェック
+                const cached = getCachedData('home_posts');
+                if (cached) {
+                    setPosts(cached);
+                    return;
+                }
+
                 const data = await client.get({
                     endpoint: 'blogs', // 'blogs' is the microCMS endpoint name
                     queries: {
                         fields: 'id,title,image,category', // Retrieve 'id' and 'title'
-                        limit: 3, // Fetch the latest 5 blog posts
+                        limit: 3, // Fetch the latest 3 blog posts
                     },
                 });
                 setPosts(data.contents);
+                // キャッシュに保存
+                setCachedData('home_posts', data.contents);
             }
             catch (error) {
                 console.error('Error fetching posts:', error);
@@ -58,7 +68,17 @@ export default function Home() {
                         <Link class="max-w-[900px] w-[90%] mx-auto my-3 block shadow-md rounded-lg hover:shadow-2xs focus:outline-hidden dark:border-neutral-700"
                             to={`/blogs/${post.id}`} key={post.id} data-aos="fade-in" data-aos-duration="1000">
                             <div class="relative flex items-center overflow-hidden">
-                                <img class="w-32 hidden sm:block sm:w-48 h-full aspect-video absolute inset-0 object-cover rounded-s-lg" src={post.image.url} alt={post.title} />
+                                {post.image && post.image.url && (
+                                    <img
+                                        class="w-32 hidden sm:block sm:w-48 h-full aspect-video absolute inset-0 object-cover rounded-s-lg"
+                                        src={post.image.url}
+                                        alt={post.title}
+                                        loading="lazy"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                        }}
+                                    />
+                                )}
                                 <div class="grow p-4  sm:ms-48">
                                     <div class="min-h-24 flex flex-col justify-center">
                                         <h3 class="font-semibold text-sm text-gray-800">

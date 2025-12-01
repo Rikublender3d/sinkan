@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { supabase } from "./supabaseClient"; // 作成したsupabaseClient.jsをインポート
 
 function Obog() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,40 +10,19 @@ function Obog() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        setLoading(true);
-
-        // 幹事メンバーの取得
-        const { data: kanjiData, error: kanjiError } = await supabase
-          .from('members')
-          .select('*')
-          .eq('is_kanji', true); // is_kanjiがtrueのメンバーをフィルタリング
-
-        if (kanjiError) {
-          throw kanjiError;
-        }
-        setExecutiveMembers(kanjiData);
-
-        // 一般メンバーの取得 (is_kanjiがfalseまたはnullのメンバー)
-        const { data: otherData, error: otherError } = await supabase
-          .from('members')
-          .select('*')
-          .eq('is_kanji', false); // is_kanjiがfalseのメンバーをフィルタリング
-        // または .not('is_kanji', 'eq', true) でis_kanjiがtrueではないメンバーを取得することもできます
-
-        if (otherError) {
-          throw otherError;
-        }
-        setOtherMembers(otherData);
-
-      } catch (error) {
-        console.error("Error fetching members:", error.message);
+        const response = await fetch('./members.json');
+        const data = await response.json();
+        setExecutiveMembers(data.filter(member => member.is_kanji));
+        setOtherMembers(data.filter(member => !member.is_kanji));
+      }
+      catch (error) {
+        console.error('Error fetching members:', error);
       } finally {
         setLoading(false);
       }
-    };
-
+    }
     fetchMembers();
-  }, []); // コンポーネントのマウント時に一度だけ実行
+  }, []);
 
   return (
     <div className="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-8">
